@@ -12,7 +12,7 @@ export class CheckOutPage {
     this.options_DeliveryMethods = page.locator("//div[@id='shipping-method']");
     this.btn_Pay = page.locator("//button[@id='checkout-payment-submit']");
     this.lbl_OrderNumber = page.locator("//div[@id='checkout']//strong");
-    this.lbl_OrderConfirmation = page.locator("//div[@id='checkout']//h5[contains(@class, 'font-semibold')]");
+    this.lbl_OrderConfirmation = page.locator("//div[@id='checkout']//h4/following-sibling::div[1]//h5");
 
   }
 
