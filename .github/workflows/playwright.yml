@@ -30,8 +30,8 @@ jobs:
         run: npx playwright install --with-deps
 
       # Run Playwright tests
-      - name: Run Playwright tests (headless)
-        run: npx playwright test --reporter=html
+      - name: Run Playwright tests
+        run: npm test
 
       # Upload Playwright test report (HTML)
       - name: Upload Playwright Report
