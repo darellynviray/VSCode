@@ -1,7 +1,6 @@
 {
   "validUser": 
   { 
-    "email": "asdf15@gmail.com", 
     "password": "admin123",
     "searchItem": "crop",
     "firstName" : "Harry",

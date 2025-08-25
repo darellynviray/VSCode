@@ -17,7 +17,7 @@ export class CheckOutPage {
   }
 
   async enterShippingDetails(firstName, lastName, address, city, postCode){
-    await this.input_FirstName.waitFor({ state: 'visible', timeout: 5000 });
+    await this.input_FirstName.waitFor({ state: 'visible', timeout: 10000 });
     await this.input_FirstName.fill(firstName);
     await this.input_LastName.fill(lastName);
     await this.input_Address.fill(address);
@@ -49,10 +49,12 @@ export class CheckOutPage {
   }
   
   async verifyOrderNumber(){
+    await this.lbl_OrderNumber.waitFor({ state: 'visible', timeout: 10000 });
     await expect(this.lbl_OrderNumber).toBeVisible();
   }
 
   async verifyOrderConfirmed(){
+    await this.lbl_OrderConfirmation.waitFor({ state: 'visible', timeout: 10000 });
     await expect(this.lbl_OrderConfirmation).toBeVisible();
   }
 }

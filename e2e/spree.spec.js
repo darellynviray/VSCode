@@ -1,15 +1,18 @@
 // @ts-check
-//import { test, expect } from '@playwright/test';
+import { test, expect } from '@playwright/test';
 import { HomePage } from './Pages/HomePage';
 import { HeaderMenu } from './Pages/HeaderMenu';
 import { AccountSlider } from './Pages/AccountSlider';
 import { ProductDetailPage } from './Pages/ProuctDetailPage';
 import { CartSlider } from './Pages/CartSlider';
 import { CheckOutPage } from './Pages/CheckOutPage'
-import { test, expect } from '@playwright/test';
 import data from './Data File/testData.json';
 
 let page;
+
+//generate random email
+const randomNumber = Math.floor(Math.random() * 10000);
+let email = `user${randomNumber}@test.com`;
 
 test.beforeAll(async ({ browser }) => {
   // Launch once
@@ -51,7 +54,7 @@ test.describe.serial('Run tests in order', () => {
       await accountSlider.link_SignUp.click();
     } 
     
-    await accountSlider.signUp(data.validUser.email, data.validUser.password);
+    await accountSlider.signUp(email, data.validUser.password);
     await homePage.verifySignUpSuccessfully();
 
     await headerMenu.clickAccountButtonLI();
@@ -67,7 +70,7 @@ test.describe.serial('Run tests in order', () => {
 
     await page.reload();
     await headerMenu.clickAccountButton();
-    await accountSlider.login(data.validUser.email, data.validUser.password)
+    await accountSlider.login(email, data.validUser.password)
     await homePage.verifyLoginSuccessfully();
 
   });
