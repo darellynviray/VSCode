@@ -1,0 +1,17 @@
+{
+  "validUser": 
+  { 
+    "email": "asdf15@gmail.com", 
+    "password": "admin123",
+    "searchItem": "crop",
+    "firstName" : "Harry",
+    "lastName" : "Potter",
+    "address" : "123 William Street",
+    "city" : "New York",
+    "postCode" : "10038",
+    "cardNumber" : "4242 4242 4242 4242",
+    "expiry" : "08/30",
+    "cvv" : "811"
+ }
+}
+  
